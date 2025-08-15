@@ -34,6 +34,7 @@ create("create-cassia-engine", {
     after: ({ name, answers }) => {
         console.log("\x1b[32m%s\x1b[0m", `  cd ${name}`);
         console.log("\x1b[32m%s\x1b[0m", `  ${answers["node-pm"]} install`);
+        console.log("\x1b[32m%s\x1b[0m", `  ${answers["node-pm"]} pnpm run dev`);
     },
     caveat,
 });

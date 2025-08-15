@@ -1,13 +1,12 @@
 {
     "name": "create-cassia-engine",
     "description": "create cassia engine project",
-    "version": "0.0.1",
+    "version": "0.0.11",
     "author": "yxdtg <2430877819@qq.com>",
     "scripts": {
         "build": "tsup src/cli.ts --minify",
         "clean": "shx rm -rf lib",
-        "dev": "tsup src/cli.ts --watch",
-        "prepublishOnly": "npm run clean && npm run build"
+        "dev": "tsup src/cli.ts --watch"
     },
     "bin": "dist/cli.js",
     "files": [
