@@ -1,29 +1,29 @@
 # Create Cassia Engine
 
-## 快速开始
+## 安装
 
 ### npm
 
 ```bash
 npm install -g create-cassia-engine
-
-create-cassia-engine <name>
 ```
 
 ### yarn
 
 ```bash
 yarn global add create-cassia-engine
-
-create-cassia-engine <name>
 ```
 
 ### pnpm
 
 ```bash
 pnpm add -g create-cassia-engine
+```
 
-create-cassia-engine <name>
+## 使用 (my-game 为项目名称)
+
+```bash
+create-cassia-engine my-game
 ```
 
 ## 特别鸣谢 description
