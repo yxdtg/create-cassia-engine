@@ -19,7 +19,7 @@ create("create-cassia-engine", {
     defaultEmail: "xxx@email.com",
     defaultTemplate: "default",
     defaultLicense: "ISC",
-    defaultPackageManager: "pnpm",
+    defaultPackageManager: "npm",
 
     promptForDescription: false,
     promptForAuthor: false,
