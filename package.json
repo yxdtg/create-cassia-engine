@@ -1,7 +1,7 @@
 {
     "name": "create-cassia-engine",
     "description": "create cassia engine project",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "author": "yxdtg <2430877819@qq.com>",
     "scripts": {
         "build": "tsup src/cli.ts --minify",

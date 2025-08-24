@@ -9,7 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "cassia-engine": "^0.0.14"
+        "cassia-engine": "^0.0.15"
     },
     "devDependencies": {
         "typescript": "~5.8.3",
