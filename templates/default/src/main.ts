@@ -12,19 +12,6 @@ import {
     Layer,
 } from "cassia-engine";
 
-await engine.start();
-
-await resourceSystem.loadTextures([
-    {
-        name: "circle",
-        src: "./circle.png",
-    },
-    {
-        name: "square",
-        src: "./square.png",
-    },
-]);
-
 @defineScene({ sceneName: "GameScene" })
 export class GameScene extends Scene {
     public mainLayer: Layer = null!;
@@ -37,21 +24,39 @@ export class GameScene extends Scene {
         squareNode.addComponent(Sprite)!.texture = resourceSystem.getTexture("square");
         squareNode.setPosition(-200, 0);
 
-        const circleNode = new Node({ layer: this.mainLayer });
-        circleNode.addComponent(Sprite)!.texture = resourceSystem.getTexture("circle");
-        circleNode.x = 200;
+        const circleNode = new Node({ layer: this.mainLayer, x: 200 });
+        circleNode.addComponent(Sprite, { texture: resourceSystem.getTexture("circle") });
 
         const textNode = new Node({ layer: this.mainLayer });
-        textNode.addComponent(Text)!.text = "Hello, Cassia Engine!";
-        textNode.addComponent(MyComponent);
+        textNode.addComponent(Text, { text: "Hello, Cassia Engine!" });
+        textNode.addComponent(MyComponent, { data: "Hello, Cassia Engine!" });
     }
 }
 
 @defineComponent({ componentName: "MyComponent" })
 export class MyComponent extends Component {
+    public data: string = "";
+
     protected onStart(): void {
         console.log("MyComponent started");
     }
 }
 
-sceneManager.loadScene(GameScene);
+async function main() {
+    await engine.start();
+
+    await resourceSystem.loadTextures([
+        {
+            name: "circle",
+            src: "./circle.png",
+        },
+        {
+            name: "square",
+            src: "./square.png",
+        },
+    ]);
+
+    sceneManager.loadScene(GameScene);
+}
+
+main();
